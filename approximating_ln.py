@@ -9,7 +9,7 @@
 # Section: ENGR-102-505
 # Assignment: Lab 6.15 
 # Date: 22 September 2025
-
+# isaac is awesome
 import math
 
 x_value = float(input("Enter a value for x: \n"))
