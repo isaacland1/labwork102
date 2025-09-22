@@ -26,21 +26,23 @@ approx_value = 0
 index = 1
 addition = 0
 
+#If statement for if it falls in expected range 
 if 0 < x_value <= 2:
-    while math.fabs((exact_value - approx_value)) >= tolerance_value:
-        addition = ((x_value**index)/index)
-        print(exact_value - approx_value)
+    #While loop to check the difference until it falls into tolerance value range
+    while math.fabs((exact_value - approx_value)) > tolerance_value:
+        addition = (((x_value - 1) ** index) / index)
+
+        #Is this an even term in the taylor polynomial expansion
         if (index % 2) == 0:
             approx_value -= addition
-    
-
+            index += 1
+        
+        #Is this an odd term in the taylor polynomial expansion
         elif (index % 2) != 0:
             approx_value += addition
-    index += 1
+            index += 1
 
 
-
-
-print(f'ln({x_value}) is approximately {approx_value}')
+print(f'ln({x_value}) is approximately {approx_value:.16f}')
 print(f'ln({x_value}) is exactly {exact_value}')
 print(f'The difference is {math.fabs(exact_value - approx_value)}')
